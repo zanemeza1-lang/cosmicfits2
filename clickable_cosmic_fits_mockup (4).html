@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Cosmic Fits</title>
+<style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f5f5f5;
+    color: black;
+  }
+
+  .container {
+    max-width: 1400px;
+    margin: auto;
+    padding: 20px;
+  }
+
+  img {
+    width: 250px;
+    border-radius: 10px;
+  }
+
+  h1 {
+    font-size: 60px;
+    margin: 10px 0;
+  }
+
+  .number {
+    font-size: 35px;
+    margin-top: 10px;
+  }
+
+  .links {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .links a {
+    font-size: 40px;
+    text-decoration: none;
+    color: black;
+    background: white;
+    padding: 15px;
+    border-radius: 15px;
+    transition: 0.2s;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  }
+
+  .links a:hover {
+    transform: scale(1.03);
+    background: #dddddd;
+  }
+
+  .hidden-page {
+    display: none;
+    margin-top: 30px;
+  }
+
+  .boxes {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-top: 20px;
+  }
+
+  .box {
+    height: 100px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    cursor: pointer;
+  }
+
+  button {
+    margin-top: 20px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    cursor: pointer;
+  }
+
+  textarea {
+    width: 90%;
+    height: 120px;
+    border-radius: 12px;
+    border: none;
+    padding: 15px;
+    font-size: 18px;
+    margin-top: 20px;
+    resize: none;
+  }
+</style>
+</head>
+<body>
+
+<div class="container" id="mainPage">
+  <div style="background:white;padding:12px 20px;border-radius:18px;box-shadow:0 4px 12px rgba(0,0,0,0.1);margin-bottom:15px;display:flex;align-items:center;gap:10px;">
+    <div style="background:#ddd;padding:8px 14px;border-radius:10px;">🔒</div>
+    <input type="text" value="https://cosmicfits.com" style="flex:1;padding:12px;border-radius:10px;border:1px solid #ccc;font-size:16px;">
+  </div>
+
+  <div style="display:flex;justify-content:space-between;align-items:center;background:white;padding:15px 25px;border-radius:18px;box-shadow:0 4px 12px rgba(0,0,0,0.1);margin-bottom:20px;">
+    <div style="display:flex;align-items:center;gap:15px;">
+      <img src="1000003228.png" style="width:120px;border-radius:16px;object-fit:cover;">
+      <div>
+        <div class="number">812-269-651 • Text or Call</div>
+        <h1 style="font-size:50px;margin:0;line-height:0.9;">cosmic fits</h1>
+      </div>
+    </div>
+
+    <div style="display:flex;align-items:center;gap:15px;">
+      <img src="1000003245.png" style="width:120px;border-radius:16px;">
+      <div style="position:relative;">
+      <button onclick="openCart()" style="background:black;color:white;padding:15px 25px;border-radius:12px;font-size:18px;">🛒 Cart</button>
+      <div id="cartBadge" style="position:absolute;top:-10px;right:-10px;background:red;color:white;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:bold;">0</div>
+    </div>
+
+    <button style="background:black;color:white;padding:15px 25px;border-radius:12px;">Suggestions Box</button>
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:250px 1fr;gap:20px;align-items:start;">
+  <div style="background:white;padding:20px;border-radius:18px;box-shadow:0 4px 12px rgba(0,0,0,0.1);">
+  <img src="1000003228.png" alt="Cosmic Fits" />
+
+  <div style="margin-top:15px;font-size:22px;font-weight:bold;display:flex;flex-direction:column;gap:10px;">
+    <a href="https://www.tiktok.com/@zane.porfavor" target="_blank" style="text-decoration:none;color:black;">TikTok: zañe por favor</a>
+    <a href="https://www.tiktok.com/@braylon.neil3" target="_blank" style="text-decoration:none;color:black;">TikTok: braylon.neil3</a>
+  </div>
+
+  <div class="links">
+    <a href="#" onclick="showProducts('Edgewood fits')">Edgewood fits</a>
+    <a href="#" onclick="showProducts('different hoodies')">different hoodies</a>
+    <a href="#" onclick="showProducts('limited additions')">limited additions</a>
+    <a href="#" onclick="showProducts('pj\'s')">pj's</a>
+    <a href="#" onclick="openSuggestions()">Suggestions Box</a>
+    
+  </div>
+</div>
+
+<div style="background:white;padding:20px;border-radius:18px;box-shadow:0 4px 12px rgba(0,0,0,0.1);">
+  <div onclick="openRatingPage()" style="background:black;color:white;padding:15px;border-radius:15px;margin-bottom:20px;cursor:pointer;text-align:center;position:relative;">
+  <div id="topStars" style="position:absolute;top:10px;right:15px;font-size:24px;">☆☆☆☆☆</div>
+  <div style="font-size:32px;">⭐ ⭐ ⭐ ⭐ ⭐</div>
+  <div style="font-size:22px;font-weight:bold;">Rate The Business</div>
+</div>
+
+<h2 style="border-bottom:3px solid red;padding-bottom:10px;">EDGEWOOD FITS</h2>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:20px;">
+    <div class="box" onclick="openAboutPage()" style="height:auto;padding:15px;flex-direction:column;cursor:pointer;">
+      <img src="1000003228.png" style="width:100%;max-width:220px;border-radius:12px;">
+      <strong>Cosmic Fits Owner</strong>
+    </div>
+
+    <div class="box" onclick="addToCart('EDGEWOOD Athletics Hoodie', '$50', '1000003245.png')" style="height:auto;padding:15px;flex-direction:column;overflow:hidden;">
+      <img src="1000003245.png" style="width:100%;max-width:220px;height:220px;object-fit:cover;border-radius:12px;">
+      <strong>EDGEWOOD Athletics Hoodie</strong>
+      <div style="color:red;font-size:24px;font-weight:bold;">$50</div>
+    </div>
+
+    <div class="box" onclick="addToCart('EDGEWOOD Shirt', '$35', '1000003236.png')" style="height:auto;padding:15px;flex-direction:column;overflow:hidden;">
+      <img src="1000003236.png" style="width:100%;max-width:220px;height:220px;object-fit:cover;border-radius:12px;">
+      <strong>EDGEWOOD Shirt</strong>
+      <div style="color:red;font-size:24px;font-weight:bold;">$35</div>
+    </div>
+  </div>
+</div>
+
+</div>
+</div>
+
+<div class="container hidden-page" id="secondPage">
+  <h1 id="pageTitle">Products</h1>
+
+  <div class="boxes">
+    <div class="box" onclick="addToCart()">Add Product</div>
+    <div class="box" onclick="addToCart()"><div><img src="1000003236.png" style="width:90px;border-radius:10px;"><br><strong>EDGEWOOD football shirts</strong><br>$50</div></div>
+    <div class="box" onclick="addToCart()">Add Product</div>
+    <div class="box" onclick="addToCart()">Add Product</div>
+    <div class="box" onclick="addToCart()">Add Product</div>
+    <div class="box" onclick="addToCart()">Add Product</div>
+    <div class="box" onclick="addToCart()">Add Product</div>
+    <div class="box" onclick="addToCart()">Add Product</div>
+    <div class="box" onclick="addToCart()">Add Product</div>
+    <div class="box" onclick="addToCart()">Add Product</div>
+    <div class="box" onclick="addToCart()">Add Product</div>
+  </div>
+
+  <button onclick="openCart()">Go To Cart 🛒</button>
+  <button onclick="goBackHome()">Back</button>
+</div>
+
+<div class="container hidden-page" id="cartPage">
+  <h1>Cart</h1>
+  <h2 id="cartCount">0 Items</h2>
+  <h2 id="subtotal" style="color:black;">Subtotal: $0</h2>
+  <h2 id="shippingCost" style="color:black;">Shipping: $5</h2>
+  <h2 id="taxAmount" style="color:black;">Tax: $0</h2>
+  <h2 id="amountDue" style="color:red;">Total: $0</h2>
+  <div style="background:white;padding:20px;border-radius:15px;margin-bottom:15px;text-align:left;">
+    <h3>Shipping Address</h3>
+
+    <input type="text" placeholder="Full Name" style="width:95%;padding:12px;margin:8px 0;border-radius:10px;border:1px solid #ccc;">
+    <input type="text" placeholder="Street Address" style="width:95%;padding:12px;margin:8px 0;border-radius:10px;border:1px solid #ccc;">
+    <input type="text" placeholder="City" style="width:45%;padding:12px;margin:8px 0;border-radius:10px;border:1px solid #ccc;">
+    <input type="text" placeholder="State" style="width:45%;padding:12px;margin:8px 0;border-radius:10px;border:1px solid #ccc;float:right;border:1px solid #ccc;">
+    <input type="text" placeholder="ZIP Code" style="width:95%;padding:12px;margin:8px 0;border-radius:10px;border:1px solid #ccc;">
+
+    <h3 style="margin-top:25px;">Pay On Website</h3>
+
+    <input type="text" placeholder="Card Number" style="width:95%;padding:12px;margin:8px 0;border-radius:10px;border:1px solid #ccc;">
+    <input type="text" placeholder="MM/YY" style="width:45%;padding:12px;margin:8px 0;border-radius:10px;border:1px solid #ccc;">
+    <input type="text" placeholder="CVV" style="width:45%;padding:12px;margin:8px 0;border-radius:10px;border:1px solid #ccc;float:right;border:1px solid #ccc;">
+
+    <button onclick="websitePay()" style="width:100%;background:black;color:white;padding:15px;border-radius:12px;font-size:18px;margin-top:15px;">Pay Now</button>
+  </div>
+  <div id="cartItems"></div>
+
+  <button onclick="buyNow()" style="background:black;color:white;">Buy EDGEWOOD Now</button>
+  <button onclick="goBackHome()">Back Home</button>
+</div>
+
+<div class="container hidden-page" id="aboutPage">
+  <div style="background:white;padding:30px;border-radius:20px;box-shadow:0 4px 12px rgba(0,0,0,0.1);text-align:left;">
+    <h1>About Cosmic Fits</h1>
+
+    <p>We are a little business in Ellettsville Indiana.</p>
+
+    <h2>Zane</h2>
+    <p>Very creative and a good seller. He also plays football and hacky sack.</p>
+
+    <h2>Braylon</h2>
+    <p>Cosmic Fits shirt designer and came up with Cosmic Fits.</p>
+
+    <button onclick="goBackHome()">Back Home</button>
+  </div>
+</div>
+
+<div class="container hidden-page" id="ratingPage">
+  <div style="background:white;padding:30px;border-radius:20px;box-shadow:0 4px 12px rgba(0,0,0,0.1);text-align:center;">
+    <h1>Rate Cosmic Fits ⭐</h1>
+
+    <div id="starRating" style="font-size:40px;margin:20px 0;cursor:pointer;">
+      <span onclick="setRating(1)">☆</span>
+      <span onclick="setRating(2)">☆</span>
+      <span onclick="setRating(3)">☆</span>
+      <span onclick="setRating(4)">☆</span>
+      <span onclick="setRating(5)">☆</span>
+    </div>
+
+    <textarea placeholder="Leave a review..."></textarea>
+    <br>
+
+    <button onclick="submitRating()" style="background:black;color:white;">Submit Review</button>
+    <button onclick="goBackHome()">Back Home</button>
+  </div>
+</div>
+
+<div class="container hidden-page" id="suggestionsPage">
+  <h1>Suggestions Box</h1>
+
+  <textarea id="suggestionText" placeholder="Type your suggestions here..."></textarea>
+  <br>
+
+  <button onclick="sendSuggestion()">Send Email 📧</button>
+  <button onclick="goBackHome()">Back Home</button>
+</div>
+
+<script>
+let cart = [];
+
+function showProducts(name) {
+  hideAllPages();
+  document.getElementById('secondPage').style.display = 'block';
+  document.getElementById('pageTitle').innerText = name;
+}
+
+function addToCart(name = 'Product', price = '$50', image = '1000003245.png') {
+  cart.push({ name, price, image });
+  document.getElementById('cartBadge').innerText = cart.length;
+  alert(name + ' added to cart!');
+}
+
+function openCart() {
+  hideAllPages();
+  document.getElementById('cartPage').style.display = 'block';
+  document.getElementById('cartCount').innerText = cart.length + ' Items';
+
+  let cartHTML = '';
+  cart.forEach((item, index) => {
+    cartHTML += `
+      <div style="background:white;padding:15px;border-radius:15px;margin:10px 0;box-shadow:0 4px 10px rgba(0,0,0,0.1);">
+        <img src="${item.image}" style="width:120px;border-radius:12px;"><br>
+        <strong>${item.name}</strong><br>
+        <span style="color:red;font-size:22px;">${item.price}</span><br>
+        <button onclick="removeFromCart(${index})" style="background:red;color:white;margin-top:10px;">Remove Item</button>
+      </div>
+    `;
+  });
+
+  document.getElementById('cartItems').innerHTML = cartHTML;
+  let subtotal = cart.length * 50;
+  let shipping = 5;
+  let tax = subtotal * 0.07;
+  let total = subtotal + shipping + tax;
+
+  document.getElementById('subtotal').innerText = 'Subtotal: $' + subtotal.toFixed(2);
+  document.getElementById('shippingCost').innerText = 'Shipping: $' + shipping.toFixed(2);
+  document.getElementById('taxAmount').innerText = 'Tax: $' + tax.toFixed(2);
+  document.getElementById('amountDue').innerText = 'Total: $' + total.toFixed(2);
+}
+
+function checkout() {
+  alert('Send payment to Cash App: $zanemeza8');
+}
+
+function buyNow() {
+  window.location.href = 'https://cash.app/$zanemeza8';
+}
+
+function removeFromCart(index) {
+  cart.splice(index, 1);
+  document.getElementById('cartBadge').innerText = cart.length;
+  openCart();
+}
+
+function websitePay() {
+  alert('Payment submitted successfully!');
+}
+
+function openRatingPage() {
+  hideAllPages();
+  document.getElementById('ratingPage').style.display = 'block';
+}
+
+function setRating(rating) {
+  let stars = document.querySelectorAll('#starRating span');
+
+  stars.forEach((star, index) => {
+    if(index < rating) {
+      star.innerText = '⭐';
+    } else {
+      star.innerText = '☆';
+    }
+  });
+
+  let topStars = '';
+  for(let i = 0; i < 5; i++) {
+    topStars += i < rating ? '⭐' : '☆';
+  }
+
+  document.getElementById('topStars').innerText = topStars;
+}
+
+function submitRating() {
+  alert('Thanks for rating Cosmic Fits!');
+}
+
+function openAboutPage() {
+  hideAllPages();
+  document.getElementById('aboutPage').style.display = 'block';
+}
+
+function openSuggestions() {
+  hideAllPages();
+  document.getElementById('suggestionsPage').style.display = 'block';
+}
+
+function sendSuggestion() {
+  let text = document.getElementById('suggestionText').value;
+  window.location.href = 'mailto:zanemeza1@gmail.com?subject=Suggestion for Cosmic Fits&body=' + encodeURIComponent(text);
+}
+
+function goBackHome() {
+  hideAllPages();
+  document.getElementById('mainPage').style.display = 'block';
+}
+
+function hideAllPages() {
+  document.getElementById('mainPage').style.display = 'none';
+  document.getElementById('secondPage').style.display = 'none';
+  document.getElementById('cartPage').style.display = 'none';
+  document.getElementById('suggestionsPage').style.display = 'none';
+  document.getElementById('aboutPage').style.display = 'none';
+  document.getElementById('ratingPage').style.display = 'none';
+}
+</script>
+
+</body>
+</html>
